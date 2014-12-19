@@ -4,7 +4,7 @@
 UTILSPATH = $(PSOC_PROG_DIR)
 #UTILSPATH = ~/projects/PSoC/programmer
 
-MERGEHEX = $(UTILSPATH)/bin/mergehex -nm $(UTILSPATH)/config/nm.hex
+MERGEHEX = POSIXLY_CORRECT=1 $(UTILSPATH)/bin/mergehex -nm $(UTILSPATH)/config/nm.hex
 BURNCMD = $(UTILSPATH)/bin/prog -C $(UTILSPATH)/config -d $(DEVICE_NAME) program
 
 ifdef CONFIG_HEX_PATH
